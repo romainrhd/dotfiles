@@ -1,0 +1,9 @@
+[core]
+	excludesFile = /Users/romain_richard/.gitignore
+[user]
+	name = Romain
+	email = romain.richard.19@gmail.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
