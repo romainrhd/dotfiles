@@ -1,5 +1,10 @@
+# System
+alias ll='ls -la'
+
 # Laravel Sail
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+
+# Deployer
 alias dep='vendor/bin/dep'
 
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
