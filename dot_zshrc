@@ -1,3 +1,12 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# oh-my-zsh plugins
+plugins=(zsh-autosuggestions web-search)
+
+# Load oh-my-zsh config
+source $ZSH/oh-my-zsh.sh
+
 # System
 alias ll='ls -la'
 
