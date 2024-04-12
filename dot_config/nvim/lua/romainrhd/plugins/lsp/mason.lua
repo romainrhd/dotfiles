@@ -36,7 +36,7 @@ return {
 				"emmet_ls",
 				"jsonls",
 				"volar",
-				"phpactor",
+				"intelephense",
 			},
 		})
 
@@ -47,8 +47,6 @@ return {
 				"php-cs-fixer", -- php formatter
 				"pint", -- laravel formatter
 				"eslint_d", -- js linter
-				"phpcs", -- php linter
-				"phpstan", -- php linter
 			},
 		})
 	end,
