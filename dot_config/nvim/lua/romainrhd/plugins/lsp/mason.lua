@@ -35,8 +35,8 @@ return {
 				"graphql",
 				"emmet_ls",
 				"jsonls",
-				"volar",
 				"intelephense",
+				"volar",
 			},
 		})
 

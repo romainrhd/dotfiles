@@ -18,6 +18,7 @@ return {
 				graphql = { "prettier" },
 				lua = { "stylua" },
 				php = { "php-cs-fixer", "pint" },
+				vue = { "prettier" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

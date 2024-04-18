@@ -96,7 +96,16 @@ return {
 				-- configure emmet language server
 				lspconfig["emmet_ls"].setup({
 					capabilities = capabilities,
-					filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
+					filetypes = {
+						"html",
+						"typescriptreact",
+						"javascriptreact",
+						"css",
+						"sass",
+						"scss",
+						"less",
+						"vue",
+					},
 				})
 			end,
 			["lua_ls"] = function()
@@ -114,6 +123,39 @@ return {
 							},
 						},
 					},
+				})
+			end,
+			["tsserver"] = function()
+				-- configure tsserver (for vue)
+				lspconfig["tsserver"].setup({
+					capabilities = capabilities,
+					init_options = {
+						plugins = {
+							{
+								name = "@vue/typescript-plugin",
+								location = vim.fn.stdpath("data")
+									.. "/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
+								languages = { "typescript", "javascript", "vue" },
+							},
+						},
+					},
+					filetypes = {
+						"javascript",
+						"typescript",
+						"vue",
+					},
+				})
+			end,
+			["volar"] = function()
+				-- configure volar for Hybride Mode
+				lspconfig["volar"].setup({
+					capabilities = capabilities,
+					init_options = {
+						vue = {
+							hybridMode = true,
+						},
+					},
+					filetypes = { "vue" },
 				})
 			end,
 		})
