@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/romainrhd/.config/.gitignore
+	excludesfile = /Users/romainrhd/.gitignore
 [user]
 	name = Romain
 	email = romain.richard.19@gmail.com

@@ -85,6 +85,38 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["tsserver"] = function()
+				-- configure ts language server
+				lspconfig["tsserver"].setup({
+					init_options = {
+						plugins = {
+							{
+								name = "@vue/typescript-plugin",
+								location = "/Users/romainrhd/.nvm/versions/node/v20.12.1/lib/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
+								languages = { "javascript", "typescript", "vue" },
+							},
+						},
+					},
+					filetypes = {
+						"javascript",
+						"typescript",
+						"javascriptreact",
+						"typescriptreact",
+						"vue",
+					},
+				})
+			end,
+			["volar"] = function()
+				-- configure vue language server
+				lspconfig["volar"].setup({
+					init_options = {
+						typescript = {
+							tsdk = "/Users/romainrhd/.nvm/versions/node/v20.12.1/lib/node_modules/typescript/lib",
+						},
+					},
+					filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+				})
+			end,
 			["graphql"] = function()
 				-- configure graphql language server
 				lspconfig["graphql"].setup({
@@ -104,7 +136,6 @@ return {
 						"sass",
 						"scss",
 						"less",
-						"vue",
 					},
 				})
 			end,
@@ -123,39 +154,6 @@ return {
 							},
 						},
 					},
-				})
-			end,
-			["tsserver"] = function()
-				-- configure tsserver (for vue)
-				lspconfig["tsserver"].setup({
-					capabilities = capabilities,
-					init_options = {
-						plugins = {
-							{
-								name = "@vue/typescript-plugin",
-								location = vim.fn.stdpath("data")
-									.. "/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
-								languages = { "typescript", "javascript", "vue" },
-							},
-						},
-					},
-					filetypes = {
-						"javascript",
-						"typescript",
-						"vue",
-					},
-				})
-			end,
-			["volar"] = function()
-				-- configure volar for Hybride Mode
-				lspconfig["volar"].setup({
-					capabilities = capabilities,
-					init_options = {
-						vue = {
-							hybridMode = true,
-						},
-					},
-					filetypes = { "vue" },
 				})
 			end,
 		})
